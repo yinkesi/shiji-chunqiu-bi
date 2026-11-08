@@ -81,7 +81,10 @@ const Engine = {
   },
   addWen(n) { G.wen = clamp(G.wen + n, 0, 100); UI.bump('wen'); },
   addRep(n) { G.rep = clamp(G.rep + n, 0, 100); UI.bump('rep'); },
-  addMoney(n) { G.money = clamp(G.money + n, 0, 99); UI.bump('money'); },
+  addMoney(n) {
+    G.money = clamp(G.money + n, 0, 99); UI.bump('money');
+    if (G.money >= 40) this.award('ach_rich');
+  },
   favorOf(id) { return G.favor[id] || 0; },
   addFavorQuiet(id, n) { G.favor[id] = clamp(this.favorOf(id) + n, 0, 100); },
   addFavor(id, n) {

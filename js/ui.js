@@ -48,7 +48,6 @@ const UI = (() => {
     const bar = $('#placelist');
     bar.innerHTML = '';
     SCENES.forEach(s => {
-      const known = G.flags.visitedScenes.includes(s.id) || true; // 全开放，鼓励探索
       const b = el('button', 'place-btn' + (s.id === World.sceneId ? ' here' : ''), s.short);
       b.onclick = () => { if (s.id !== World.sceneId && !Dialog.active) World.travel(s.id); UI.closePanel(); };
       bar.appendChild(b);
@@ -160,7 +159,7 @@ const UI = (() => {
         info.innerHTML = `<div class="pname">${met || published ? p.name : '？？？'}<span class="phao">${met || published ? (p.hao || '') : '未识'}</span></div>
           <div class="pbio">${published ? p.bio : met ? p.intro + '<br><span class="muted">立传后解锁全文小传。</span>' : '尚未结识。多去校园里走走。'}</div>
           ${published && p.quote ? `<div class="pquote">${p.quote}</div>` : ''}
-          ${met && !published ? `<div class="muted" style="margin-top:4px">好感 ${Engine.favorOf(p.id)}${p.interview ? Engine.hasShard(p.interview.give) ? ' · 已采访' : ' · 30 可采访' : ''}</div>` : ''}`;
+          ${met && !published ? `<div class="muted" style="margin-top:4px">好感 ${Engine.favorOf(p.id)}${p.interview ? Engine.hasShard(p.interview.give) ? ' · 已采访' : ` · ${p.ivNeed != null ? p.ivNeed : 30} 可采访` : ''}</div>` : ''}`;
         card.appendChild(info);
         grid.appendChild(card);
       });

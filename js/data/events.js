@@ -337,7 +337,7 @@ const EVENTS = [
     {who:'旁白', text:'月考日清晨。大展的闹钟没响——不，是他自己没听见。'},
     {who:'大展', text:'善，恰吾不欲上早读。……又觉不妥，乃逼视表：'},
     {who:'大展', text:'7.55！！'},
-    {who:'mg', text:'（亲历大展的九十分钟：找锁、找笔、找考场、填考号）'},
+    {mg:'late', who:'mg', text:'（亲历大展的九十分钟：找锁、找笔、找考场、填考号）'},
   ]},
 /* ---- ch7 修逸列传 ---- */
 { id:'ev_zheng20', ch:7, day:1, periods:['morning'], scene:'classroom7', pos:[540,200], name:'正二十面体', cast:['touge'], shard:'sh_zheng20',
@@ -351,7 +351,7 @@ const EVENTS = [
   script:[
     {who:'头哥', text:'（掏出球棍与陀螺）此陀螺，名曰三溴化氮，鲜有败绩。'},
     {who:'头哥', text:'汝，敢与吾战否？'},
-    {who:'mg', text:'（陀螺对战：蓄力、发射、碰撞）'},
+    {mg:'spin', who:'mg', text:'（陀螺对战：蓄力、发射、碰撞）'},
   ]},
 { id:'ev_mofang', ch:7, day:2, periods:['morning'], scene:'classroom7', pos:[540,200], name:'魔方万段', cast:['touge','yongjun'], shard:'sh_mofang', ach:'ach_mother',
   script:[
@@ -543,7 +543,7 @@ const EVENTS = [
   script:[
     {who:'旁白', text:'下课铃响。李默从座位上消失了——先以右足探地。'},
     {who:'李默', text:'（狂奔，左右腾挪，状类羚羊）让让——食堂！'},
-    {who:'mg', text:'（随羚羊冲刺：三线躲人，冲向打饭窗口）'},
+    {mg:'canteen', who:'mg', text:'（随羚羊冲刺：三线躲人，冲向打饭窗口）'},
   ]},
 { id:'ev_xunzheng', ch:13, day:[1,2], periods:['aft'], scene:'corridor', pos:[400,260], name:'巡征二楼', cast:['limo'], shard:'sh_xunzheng',
   script:[

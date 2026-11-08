@@ -144,9 +144,6 @@ const World = (() => {
   function refreshNPCs() {
     npcs = [];
     PEOPLE.forEach(p => {
-      if (G.ch === 0 && !['luhao', 'dage', 'shenren', 'xiannv', 'hanxiao'].includes(p.id) && p.role === 's' && p.cls !== '8') {
-        /* 序章校园还很安静：只出现主角相关的人 */
-      }
       const pl = placement(p);
       if (pl.scene !== sceneId) return;
       npcs.push({ p, x: pl.pos[0], y: pl.pos[1], busy: !!pl.busy });
